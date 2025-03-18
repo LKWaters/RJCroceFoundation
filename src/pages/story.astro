@@ -1,0 +1,34 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Content from '~/components/widgets/Content.astro';
+
+const metadata = {
+  title: 'Our Story',
+};
+---
+
+<Layout metadata={metadata}>
+
+  <Content
+    title="Our Story"
+    image={{
+      src: '~/assets/images/RJ_Clubs.JPG',
+      alt: 'Colorful Image',
+    }}
+  >
+
+  <Fragment slot="content">
+    <p class="text-justify">
+      The RJ Croce Foundation was founded in 2023 to honor the life and memory of Ronald “RJ” Anthony Croce. The positive impacts RJ made were through the meaningful connections he had with those who knew him, by way of his endearing support, dependability, and joyful nature. We established this public charity in efforts to continue making such meaningful and positive impacts in RJs name. RJ absolutely loved his time at school! While earning his associate’s degree from Brookdale Community College, RJ served as a volunteer for the Rumson First Aid Squad and graduated with a 4.0 GPA. RJ then brought his bright spirit to Rutgers University, making hilarious memories with his Alpha Sigma Phi Fraternity brothers and graduating with honors from the Business School. Yet, RJ regarded high school as his glory days, attending Rumson Fair Haven Regional High School with his hometown friends. Aside from all his hard work, the bountiful memories are filled with RJ always eager to lend a hand, spending time with friends and family, and making you feel as happy to be there as he was! 
+    </p>
+    <br>
+    <p class="text-justify">
+      What began as a gathering of friends and family to celebrate the life of RJ, on land sacred to him, the golf course, the annual RJ Croce Celebration Golf Outing raises funding to award four $2,500 scholarships to first year students attending Brookdale Community College.
+    </p>
+    <br>
+    <p class="text-justify">
+      RJ’s bright and supportive spirit carries on through our work as we continue to build meaningful connections to foster positive impacts in honor and memory of RJ.
+    </p>
+  </Fragment>
+
+</Layout>
