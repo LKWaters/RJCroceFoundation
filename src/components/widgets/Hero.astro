@@ -18,8 +18,11 @@ const {
 } = Astro.props;
 ---
 
-<section class="relative md:-mt-[76px] not-prose" {...id ? { id } : {}}>
-  <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+<section
+  class="relative md:mt-[2px] not-prose bg-[url(~/assets/images/RJ_Golfing.JPG)] bg-cover bg-center"
+  {...id ? { id } : {}}
+>
+  <div class="absolute inset-0 pointer-events-none bg-gray-500 opacity-50" aria-hidden="true">
     <slot name="bg">
       {bg ? <Fragment set:html={bg} /> : null}
     </slot>
