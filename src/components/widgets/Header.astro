@@ -108,7 +108,16 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
                           ]}
                           href={href2}
                         >
-                          {text2}
+                          {
+                            ()=> {
+                              if (text2.includes("Comming Soon")) {
+                                const result = <div class="text-muted">{text2}</div>
+                                return result
+                              } else {
+                                return <div>{text2}</div>
+                              }
+                            }
+                          }
                         </a>
                       </li>
                     ))}

@@ -18,12 +18,12 @@ export const headerData = {
           href: getPermalink('/work/brookdale'),
         },
         {
-          text: 'ACE Scholarships',
-          href: getPermalink('/work/ace'),
+          text: 'ACE Scholarships (Comming Soon)',
+          href: getPermalink('/work/comming-soon'),
         },
         {
-          text: 'Sports EQ Drive',
-          href: getPermalink('/work/eq-drive'),
+          text: 'Sports EQ Drive (Comming Soon)',
+          href: getPermalink('/work/comming-soon'),
         },
       ],
     },
