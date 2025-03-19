@@ -8,7 +8,7 @@ export const headerData = {
     },
     {
       text: 'Our Story',
-      href: 'story',
+      href: getPermalink('/story'),
     },
     {
       text: 'Our Work',
@@ -29,7 +29,7 @@ export const headerData = {
     },
     {
       text: 'Get Involved',
-      href: 'involved',
+      href: getPermalink('/involved'),
     },
   ],
   actions: [{ text: 'Donate', href: 'https://github.com/onwidget/astrowind', target: '_blank' }],
