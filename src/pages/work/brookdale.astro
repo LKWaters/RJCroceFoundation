@@ -1,0 +1,53 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+import Pillars from '~/components/widgets/Pillars.astro';
+
+const metadata = {
+    title: 'Brookdale',
+};
+---
+  
+<Layout metadata={metadata}>
+
+    <Pillars
+        title="Our Work"
+        sub_title="RJ Croce Meaningful Scholarships"
+        information={[
+            "(4) Four $2,500 Scholarships",
+            "to Incoming Freshmen Attending",
+            "Brookdale Community College",
+        ]}
+
+        pillars = {[
+            {
+                "header":'Pillar I', 
+                "title":"Friendship", 
+                "description":"",
+                "quote":"“A MAN'S FRIENDSHIPS ARE ONE OF THE BEST MEASURES OF HIS WORTH”",
+                "author":"Charles Darwin"
+            },
+            {
+                "header":'Pillar II', 
+                "title":"Volunteering", 
+                "description":"",
+                "quote":"“TRY NOT TO BECOME A PERSON OF SUCCESS, BUT RATHER TRY TO BECOME A PERSON OF VALUE”",
+                "author":"Albert Einstein"
+            },
+            {
+                "header":'Pillar III', 
+                "title":"Meaningfulness", 
+                "description":"",
+                "quote":"“I BELIEVE EVERY HUMAN HAS A FINITE NUMBER OF HEARTBEATS. I DON'T INTEND TO WASTE ANY OF MINE.”",
+                "author":"Neil Armstrong"
+            },
+            {
+                "header":'Pillar IV', 
+                "title":"Leadership", 
+                "description":"",
+                "quote":"“IF YOUR ACTIONS INSPIRE OTHERS TO DREAM MORE, LEARN MORE, DO MORE, AND BECOME MORE, YOU ARE A LEADER.”",
+                "author":"John Quincy Adams"
+            },
+        ]}
+    />
+</Layout>

@@ -1,0 +1,53 @@
+---
+import { APP_BLOG } from 'astrowind:config';
+
+import Item from '~/components/ui/Pillar.astro';
+import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import type { Widget } from '~/types';
+
+
+export interface Props extends Widget {
+  title?: string;
+  sub_title?: string;
+  information?: any;
+  pillars?: any;
+}
+
+const {
+  title = await Astro.slots.render('title'),
+  information = await Astro.slots.render('information'),
+  sub_title = await Astro.slots.render('sub_title'),
+  pillars = await Astro.slots.render('pillars'),
+
+  id,
+  isDark = false,
+  classes = {},
+  bg = await Astro.slots.render('bg'),
+} = Astro.props;
+---
+
+{
+  APP_BLOG.isEnabled ? (
+    <WidgetWrapper id={id} isDark={isDark} containerClass={classes?.container as string} bg={bg}>
+        <h1
+            class="text-5xl text-center md:text-6xl font-bold leading-tighter tracking-tighter mb-4 font-heading dark:text-gray-200 intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade"
+            set:html={title}
+        />
+
+        <h2 class="text-4xl text-center md:text-3xl font-bold leading-tighter tracking-tighter mb-4 font-heading dark:text-gray-200 intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade"
+            set:html={sub_title}
+        />
+        {information.map((item) => (
+            <div class="text-2xl text-center md:text-xl font-bold leading-tighter tracking-tighter mb-1 font-heading dark:text-gray-200 intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
+                {item}
+            </div>
+        ))}
+
+        <div class="grid gap-6 row-gap-5 md:grid-cols-2 lg:grid-cols-4 mt-10">
+        {pillars.map((pillar) => <Item pillar={pillar} />)}
+        </div>
+    </WidgetWrapper>
+  ) : (
+    <Fragment />
+  )
+}
