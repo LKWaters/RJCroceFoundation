@@ -1,6 +1,10 @@
 ---
-import Hero from '~/components/widgets/Hero.astro';
 import Layout from '~/layouts/PageLayout.astro';
+
+import Hero2 from '~/components/widgets/Hero2.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+import { getPermalink } from '../../utils/permalinks';
 
 const metadata = {
   title: 'Coming Soon',
@@ -8,26 +12,32 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <!-- Hero Widget ******************* -->
+  <!-- Hero2 Widget ******************* -->
 
-  <Hero
-    tagline="Coming Soon"
+  <Hero2
+    tagline="Comming Soon"
+    title="We are Constantly Looking For New Ways to Give Back!"
+    subtitle="We are commited to funding opportunities that enhance and enrich our comunity. Please check back at a later date for more."
+    actions={[
+      { variant: 'primary', text: 'Get Involved', href: getPermalink("involved"), icon: 'tabler:square-rounded-arrow-right' },
+      { text: 'Donate', href: '#' },
+    ]}
     image={{
       src: '~/assets/images/RJ Croce Foundation Logo.png',
       alt: 'Foundation Logo',
     }}
-  >
-    <Fragment slot="title">
-      We are Constantly Looking <br />
-      <span class="text-accent dark:text-white highlight"> For New Ways to Give Back </span>
-    </Fragment>
+  />
 
-    <Fragment slot="subtitle">
-        <span class="text-white text-2xl">
-            We are commited to funding opportunities that enhance and enrich our comunity. 
-            Please check back at a later date for more.
-        </span>
-    </Fragment>
-  </Hero>
-
+  <CallToAction
+    title="Coming soon"
+    subtitle="We are working on the content of these pages. You will see them very soon. Stay tuned! In the mean time checkout our other work."
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Brookdale Scholarships',
+        href: getPermalink("work/brookdale"),
+        icon: '',
+      },
+    ]}
+  />
 </Layout>
