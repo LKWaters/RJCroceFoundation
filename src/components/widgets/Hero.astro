@@ -29,8 +29,8 @@ const {
   </div>
   <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
     <div class="pt-0 md:pt-[76px] pointer-events-none"></div>
-    <div class="py-12 md:py-20">
-      <div class="text-center pb-10 md:pb-16 max-w-5xl mx-auto">
+    <div class="py-12 md:py-20 flex flex-col lg:flex-row gap-12">
+      <div class="text-center pb-10 md:pb-16 basis-full">
         {
           tagline && (
             <p
@@ -42,7 +42,7 @@ const {
         {
           title && (
             <h1
-              class="text-5xl md:text-6xl font-bold leading-tighter tracking-tighter mb-4 font-heading dark:text-gray-200 intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade"
+              class="text-5xl md:text-6xl font-bold leading-tighter tracking-tighter mb-8 font-heading dark:text-gray-200 intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade"
               set:html={title}
             />
           )
@@ -51,11 +51,34 @@ const {
           {
             subtitle && (
               <p
-                class="text-xl text-muted mb-6 dark:text-slate-300 intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade"
+                class="text-2xl mb-6 dark:text-slate-300 intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade"
                 set:html={subtitle}
               />
             )
           }
+          <div class="mt-12">
+            <h1
+              class="text-5xl underline md:text-6xl font-bold leading-tighter tracking-tighter mb-8 font-heading dark:text-gray-200 intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade"
+            >
+              The Day
+            </h1>
+            <p
+              class="text-2xl mb-6 dark:text-slate-300 intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade"
+            >
+              <span class="inline font-semibold">
+                <span>11:30 AM - 1PM: BBQ Cookout & Registration</span>
+                <br />
+                <span>1:00PM: Shotgun</span>
+                <br />
+                <span>6:00PM: Cocktail Hour</span>
+                <br />
+                <span>6:30PM: Dinner & Awards</span>
+              </span>
+            </p>
+          </div>
+          <div>
+            <video class="w-full" src="~/assets/images/outing.MOV" controls></video>
+          </div>
           {
             actions && (
               <div class="max-w-xs sm:max-w-md m-auto flex flex-nowrap flex-col sm:flex-row sm:justify-center gap-4 intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
@@ -71,31 +94,56 @@ const {
               </div>
             )
           }
+          {content && <Fragment set:html={content} />}
         </div>
-        {content && <Fragment set:html={content} />}
+        <div
+          class="intersect-once intercept-no-queue intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade"
+        >
+          {
+            image && (
+              <div class="relative m-auto max-w-5xl">
+                {typeof image === 'string' ? (
+                  <Fragment set:html={image} />
+                ) : (
+                  <Image
+                    class="mx-auto rounded-md w-full"
+                    widths={[400, 768, 1024, 2040]}
+                    sizes="(max-width: 767px) 400px, (max-width: 1023px) 768px, (max-width: 2039px) 1024px, 2040px"
+                    loading="eager"
+                    width={1024}
+                    height={576}
+                    {...image}
+                  />
+                )}
+              </div>
+            )
+          }
+        </div>
       </div>
-      <div
-        class="intersect-once intercept-no-queue intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade"
-      >
-        {
-          image && (
-            <div class="relative m-auto max-w-5xl">
-              {typeof image === 'string' ? (
-                <Fragment set:html={image} />
-              ) : (
-                <Image
-                  class="mx-auto rounded-md w-full"
-                  widths={[400, 768, 1024, 2040]}
-                  sizes="(max-width: 767px) 400px, (max-width: 1023px) 768px, (max-width: 2039px) 1024px, 2040px"
-                  loading="eager"
-                  width={1024}
-                  height={576}
-                  {...image}
-                />
-              )}
-            </div>
-          )
-        }
+      <div class="text-center pb-10 md:pb-16 flex flex-col gap-8">
+        <Image
+          src="~/assets/images/Golf_Carts.jpg"
+          class="w-full md:h-full rounded shadow-lg bg-gray-400 dark:bg-slate-700"
+          widths={[400, 900]}
+          width={400}
+          sizes="(max-width: 900px) 400px, 900px"
+          alt={'golf carts'}
+          layout="cover"
+          loading="eager"
+          decoding="async"
+        />
+        <Image
+          src="~/assets/images/Trophies.jpg"
+          class="w-full md:h-full rounded shadow-lg bg-gray-400 dark:bg-slate-700"
+          widths={[400, 900]}
+          width={400}
+          sizes="(max-width: 700px) 400px, 900px"
+          alt={'trophies'}
+          aspectRatio="16:9"
+          layout="cover"
+          loading="lazy"
+          decoding="async"
+        />
       </div>
     </div>
   </div>

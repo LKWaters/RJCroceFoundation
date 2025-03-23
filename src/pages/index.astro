@@ -3,7 +3,6 @@ import Layout from '~/layouts/PageLayout.astro';
 
 import Hero from '~/components/widgets/Hero.astro';
 
-
 const metadata = {
   title: 'AstroWind — Free template for creating websites with Astro + Tailwind CSS',
   ignoreTitleTemplate: true,
@@ -13,8 +12,8 @@ const metadata = {
 <Layout metadata={metadata}>
   <!-- Hero Widget ******************* -->
 
-  <Hero
-    actions={[
+  <!-- uncomment if we need actions -->
+  <!-- actions={[
       {
         variant: 'primary',
         text: 'Get template',
@@ -23,23 +22,23 @@ const metadata = {
         icon: 'tabler:download',
       },
       { text: 'Learn more', href: '#features' },
-    ]}
-  >
-    <Fragment slot="title">
-      Free template for <span class="hidden xl:inline">creating websites with</span>
-      <span class="text-accent dark:text-white highlight"> Astro 5.0</span> + Tailwind CSS
-    </Fragment>
+    ]} -->
+  <Hero>
+    <Fragment slot="title"> Save The Date </Fragment>
 
     <Fragment slot="subtitle">
-      <span class="hidden sm:inline">
-        <span class="font-semibold">AstroWind</span> is a free, customizable and production-ready template for Astro 5.0
-        + Tailwind CSS.</span
-      >
-      <span class="block mb-1 sm:hidden font-bold text-blue-600">AstroWind: Production-ready.</span>
-      Suitable for Startups, Small Business, SaaS websites, Professional Portfolios, Marketing websites, Landing Pages &
-      Blogs.
+      <span class="inline">
+        <span class="font-semibold"
+          ><span>3rd Annual RJ Croce Celebration</span>
+          <br />
+          <span>Golf Outing</span>
+          <br />
+          <span>8/21/25</span>
+          <br />
+          <span>Beacon Hill Country Club</span>
+          <span>Middletown, NJ</span>
+        </span>
+      </span>
     </Fragment>
   </Hero>
-
-
 </Layout>
