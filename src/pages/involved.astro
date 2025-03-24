@@ -1,0 +1,25 @@
+---
+import Headline from '~/components/ui/Headline.astro';
+import Payment from '~/components/ui/Payment.astro';
+import Sponsorship from '~/components/ui/Sponsorship.astro';
+import Volunteering from '~/components/ui/Volunteering.astro';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'Get Involved',
+};
+---
+
+<Layout metadata={metadata}>
+  <div class="px-4 md:px-6 py-12 md:py-16 lg:py-20 text-default">
+    <h1
+      class="text-5xl text-center md:text-6xl font-bold leading-tighter tracking-tighter mb-4 font-heading dark:text-gray-200 intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade"
+    >
+      {metadata.title}
+    </h1>
+
+    <Sponsorship />
+    <Payment />
+    <Volunteering />
+  </div>
+</Layout>

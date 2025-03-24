@@ -64,6 +64,6 @@ export const footerData = {
     Developed by 
     <a target="_blank" rel="noopener noreferrer" href="https://github.com/LKWaters"><u>LKWaters</u></a>
      and 
-    <a target="_blank" rel="noopener noreferrer" href="https://github.com/dzialoj"><u>dizaloj</u></a>
+    <a target="_blank" rel="noopener noreferrer" href="https://github.com/dzialoj"><u>dzialoj</u></a>
   `,
 };
