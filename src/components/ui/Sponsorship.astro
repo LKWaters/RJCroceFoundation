@@ -1,0 +1,33 @@
+---
+import WidgetWrapper from './WidgetWrapper.astro';
+
+const tiers = [
+  { tier: 'Gold', pricing: 1500 },
+  { tier: 'Silver', pricing: 1000 },
+  { tier: 'Tee Box', pricing: 150 },
+  { tier: 'Golf Hole', pricing: 125 },
+  { tier: 'Golf Cart', pricing: 50 },
+  { tier: 'Cocktail', pricing: 500 },
+];
+
+const formatter = new Intl.NumberFormat('en-US', {
+  style: 'currency',
+  currency: 'USD',
+});
+const formatPrice = (value) => formatter.format(value);
+---
+
+<WidgetWrapper>
+  <div class="flex flex-col justify-center items-center gap-4 text-center">
+    <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Sponsorship Opportunities</h3>
+    {
+      tiers.map((x) => (
+        <div class="flex justify-center items-center gap-4">
+          <p class="text-xl sm:text-2xl font-semibold">{x.tier}</p>
+          <span>-</span>
+          <p class="text-xl sm:text-2xl">{formatPrice(x.pricing)}</p>
+        </div>
+      ))
+    }
+  </div>
+</WidgetWrapper>
