@@ -1,0 +1,35 @@
+---
+import type { Widget } from '~/types';
+
+export interface Props extends Widget {
+    start?: number,
+    end?: number;
+    duration?: number;
+    }
+    
+    const {
+    start = await Astro.slots.render('start'),
+    end = await Astro.slots.render('end'),
+    duration = await Astro.slots.render('duration'),
+    } = Astro.props;
+
+---
+<span id="counter">{start}</span>
+    
+<script define:vars={{ start, end, duration }}>
+
+    const counterElement = document.getElementById('counter');
+    let current = start;
+    const increment = (end - start) / (duration / 10); // Calculate increment step
+    
+    const intervalId = setInterval(() => {
+        current += increment;
+        if (current >= end) {
+        clearInterval(intervalId);
+        current = end;
+        }
+        if (counterElement){
+            counterElement.textContent = String(Math.round(current));
+        }
+    }, 10);
+</script>
