@@ -1,13 +1,15 @@
 ---
 import { Icon } from 'astro-icon/components';
-import Logo from '~/components/Logo.astro';
+import Logo_RJ from '~/components/Logo_RJ.astro';
 import ToggleTheme from '~/components/common/ToggleTheme.astro';
 import ToggleMenu from '~/components/common/ToggleMenu.astro';
-import Button from '~/components/ui/Button.astro';
+import ButtonPayPal from '~/components/ui/ButtonPayPal.astro';
 
 import { getHomePermalink } from '~/utils/permalinks';
 import { trimSlash, getAsset } from '~/utils/permalinks';
 import type { CallToAction } from '~/types';
+
+import { twMerge } from 'tailwind-merge';
 
 interface Link {
   text?: string;
@@ -44,6 +46,18 @@ const {
   position = 'center',
 } = Astro.props;
 
+const variants = {
+  primary: 'btn-primary',
+  secondary: 'btn-secondary',
+  tertiary: 'btn btn-tertiary',
+  link: 'cursor-pointer hover:text-primary',
+};
+
+const variant = 'secondary';
+const className = '';
+
+
+
 const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
 ---
 
@@ -72,7 +86,7 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
   >
     <div class:list={[{ 'mr-auto rtl:mr-0 rtl:ml-auto': position === 'right' }, 'flex justify-between']}>
       <a class="flex items-center" href={getHomePermalink()}>
-        <Logo />
+        <Logo_RJ />
       </a>
       <div class="flex items-center md:hidden">
         <ToggleMenu />
@@ -110,11 +124,13 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
                         >
                           {
                             ()=> {
-                              if (text2.includes("Coming Soon")) {
-                                const result = <div class="text-muted">{text2}</div>
-                                return result
-                              } else {
-                                return <div>{text2}</div>
+                              if (text2) {
+                                if (text2.includes("Coming Soon")) {
+                                  const result = <div class="text-muted">{text2}</div>
+                                  return result
+                                } else {
+                                  return <div>{text2}</div>
+                                }
                               }
                             }
                           }
@@ -164,7 +180,7 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
           actions?.length ? (
             <span class="ml-4 rtl:ml-0 rtl:mr-4">
               {actions.map((btnProps) => (
-                <Button {...btnProps} class="ml-2 py-2.5 px-5.5 md:px-6 font-semibold shadow-none text-sm w-auto" />
+                <ButtonPayPal {...btnProps} class="ml-2 py-2.5 px-5.5 md:px-6 font-semibold shadow-none text-sm w-auto" />
               ))}
             </span>
           ) : (

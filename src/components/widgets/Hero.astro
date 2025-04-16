@@ -4,6 +4,9 @@ import Button from '~/components/ui/Button.astro';
 
 import OutingVid from '../../assets/images/outing.mp4';
 
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import { getPermalink } from '../../utils/permalinks';
+
 import type { Hero as Props } from '~/types';
 
 const {
@@ -44,7 +47,7 @@ const {
         {
           title && (
             <h1
-              class="text-5xl md:text-6xl font-bold leading-tighter tracking-tighter mb-8 font-heading intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade"
+              class="text-5xl underline md:text-6xl font-bold leading-tighter tracking-tighter mb-8 font-heading intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade"
               set:html={title}
             />
           )
@@ -58,27 +61,18 @@ const {
               />
             )
           }
-          <div class="mt-12">
-            <h1
-              class="text-5xl underline md:text-6xl font-bold leading-tighter tracking-tighter mb-8 font-heading intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade"
+          <div class="mt-12 motion-safe:md:intersect:animate-fade">
+            <Button
+              variant="primary"
+              text="Get Involved"
+              target="_blank"
+              href={getPermalink("/involved")}
+              icon= 'tabler:square-rounded-arrow-right'
             >
-              The Day
-            </h1>
-            <p
-              class="text-2xl mb-6 intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade"
-            >
-              <span class="inline font-semibold">
-                <span>11:30 AM - 1PM: BBQ Cookout & Registration</span>
-                <br />
-                <span>1:00PM: Shotgun</span>
-                <br />
-                <span>6:00PM: Cocktail Hour</span>
-                <br />
-                <span>6:30PM: Dinner & Awards</span>
-              </span>
-            </p>
+            </Button>
+            
           </div>
-          <div>
+          <div class="mt-12">
             <video class="h-full w-full rounded-lg" controls>
               <source src={OutingVid} type="video/mp4" />
               Your browser does not support the video tag.

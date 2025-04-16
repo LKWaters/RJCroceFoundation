@@ -7,10 +7,6 @@ export const headerData = {
       href: getHomePermalink(),
     },
     {
-      text: 'Our Story',
-      href: getPermalink('/story'),
-    },
-    {
       text: 'Our Work',
       links: [
         {
@@ -41,6 +37,7 @@ export const footerData = {
       title: 'Get In Touch',
       links: [
         { text: '(732) 241-7990', href: 'tel:7322417990' },
+        { text: '(732) 687-9334', href: 'tel:7326879334' },
         { text: 'RJCroceFoundation@gmail.com', href: 'mailto:rjcrocefoundation@gmail.com' },
         {
           text: 'RJ Croce Foundation \n 30 First Street \n Rumson NJ, 07760',

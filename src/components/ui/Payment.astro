@@ -1,19 +1,18 @@
 ---
 import WidgetWrapper from './WidgetWrapper.astro';
+import ButtonPayPal from './ButtonPayPal.astro';
 ---
 
 <WidgetWrapper>
   <div class="flex flex-col justify-center items-center gap-8 text-center">
     <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Payment Options</h3>
-    <a
-      href="#"
-      class="text-xl sm:text-2xl text-muted hover:text-gray-700 hover:underline dark:text-gray-400 transition duration-150 ease-in-out"
-      >(insert link to Charity Proud)</a
-    >
+    <ButtonPayPal 
+      text="Donate"
+    />
     <p class="text-xl sm:text-2xl">OR</p>
     <p class="text-xl sm:text-2xl">Mail a check, payable to:</p>
     <address class="text-xl sm:text-2xl">
-      RJ Croce Foundation, INC <br /> 30 First Street Rumson, NJ 07760
+      RJ Croce Foundation, INC <br> 30 First Street Rumson, NJ 07760
     </address>
   </div>
 </WidgetWrapper>
