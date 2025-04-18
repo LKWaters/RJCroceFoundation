@@ -1,6 +1,7 @@
 ---
 import Image from '~/components/common/Image.astro';
 import ButtonPayPal from '~/components/ui/ButtonPayPal.astro';
+import Button from '~/components/ui/Button.astro';
 
 import type { Hero as Props } from '~/types';
 
@@ -58,9 +59,16 @@ const {
             actions && (
               <div class="max-w-xs sm:max-w-md m-auto flex flex-nowrap flex-col sm:flex-row sm:justify-center gap-4 lg:justify-start lg:m-0 lg:max-w-7xl intersect-once motion-safe:md:intersect:animate-fade motion-safe:md:opacity-0 intersect-quarter">
                 {Array.isArray(actions) ? (
+                  
                   actions.map((action) => (
+                    action.href=="paypal" &&
                     <div class="flex w-full sm:w-auto">
                       <ButtonPayPal {...(action || {})} class="w-full sm:mb-0" />
+                    </div>
+                    ||
+                    action.href!="paypal" &&
+                    <div class="flex w-full sm:w-auto">
+                      <Button data-astro-reload {...(action || {})} class="w-full sm:mb-0" />
                     </div>
                   ))
                 ) : (
