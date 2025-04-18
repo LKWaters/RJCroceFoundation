@@ -3,7 +3,7 @@ import { getPermalink, getHomePermalink } from './utils/permalinks';
 export const headerData = {
   links: [
     {
-      text: 'Home',
+      text: 'Our Story',
       href: getHomePermalink(),
     },
     {
@@ -40,7 +40,7 @@ export const footerData = {
         { text: '(732) 687-9334', href: 'tel:7326879334' },
         { text: 'RJCroceFoundation@gmail.com', href: 'mailto:rjcrocefoundation@gmail.com' },
         {
-          text: 'RJ Croce Foundation \n 30 First Street \n Rumson NJ, 07760',
+          text: '30 First Street \n Rumson NJ, 07760',
           href: 'http://maps.google.com/?q=30 First Street, Rumson, New Jersey, 07760',
         },
       ],
@@ -51,10 +51,8 @@ export const footerData = {
     { text: 'Privacy Policy', href: getPermalink('/privacy') },
   ],
   socialLinks: [
-    { ariaLabel: 'X', icon: 'tabler:brand-x', href: '#' },
-    { ariaLabel: 'Instagram', icon: 'tabler:brand-instagram', href: '#' },
-    { ariaLabel: 'Facebook', icon: 'tabler:brand-facebook', href: '#' },
-    { ariaLabel: 'LinkedIn', icon: 'tabler:brand-linkedin', href: '#' },
+    { ariaLabel: 'Instagram', icon: 'tabler:brand-instagram', href: 'https://www.instagram.com/rjcrocefoundation/' },
+    { ariaLabel: 'Facebook', icon: 'tabler:brand-facebook', href: 'https://www.facebook.com/profile.php?id=61565832213939' },
   ],
   footNote: `
     &#9178; 

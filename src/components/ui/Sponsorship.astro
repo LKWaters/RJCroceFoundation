@@ -2,12 +2,14 @@
 import WidgetWrapper from './WidgetWrapper.astro';
 
 const tiers = [
-  { tier: 'Gold', pricing: 1500 },
-  { tier: 'Silver', pricing: 1000 },
-  { tier: 'Tee Box', pricing: 150 },
-  { tier: 'Golf Hole', pricing: 125 },
-  { tier: 'Golf Cart', pricing: 50 },
-  { tier: 'Cocktail', pricing: 500 },
+  { tier: 'Annual Platinum', pricing: 1500, includes: "Logo placement on all event materials (banners, t-shirts, digital media), Recognition at all events, Dedicated social media shoutouts" },
+  { tier: 'Gold', pricing: 1000, includes: "Logo/Name placement on event materials (banners, t-shirts, digital media), Recognition at events, Social media acknowledgements"},
+  { tier: 'Cocktail', pricing: 500, includes: "Logo/Name placement on individual cocktail hour banner"},
+  { tier: 'Dinner', pricing: 500, includes: "Logo/Name placement on individual dinner banner"},
+  { tier: 'Tee Box', pricing: 150, includes: "Logo/Name placement on individual sign at tee box "},
+  { tier: 'Golf Hole', pricing: 125, includes: "Logo/Name placement on individual sign around the green"},
+  { tier: 'Golf Cart', pricing: 50, includes: "Logo/Name placement on the golf cart"},
+  
 ];
 
 const formatter = new Intl.NumberFormat('en-US', {
@@ -18,15 +20,20 @@ const formatPrice = (value) => formatter.format(value);
 ---
 
 <WidgetWrapper>
-  <div class="flex flex-col justify-center items-center gap-4 text-center">
+  <div class="flex flex-col mx-auto max-w-3xl gap-4 text-center">
     <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Sponsorship Opportunities</h3>
     {
       tiers.map((x) => (
-        <div class="flex justify-center items-center gap-4">
-          <p class="text-xl sm:text-2xl font-semibold">{x.tier}</p>
-          <span>-</span>
-          <p class="text-xl sm:text-2xl">{formatPrice(x.pricing)}</p>
+        <div class="flex gap-4">
+          <div class="w-1/3 text-left">
+            <p class="text-xl sm:text-2xl font-semibold">{x.tier}</p>
+            <p class="text-lg sm:text-xl text-muted">{formatPrice(x.pricing)}</p>
+          </div>
+          <div class="w-2/3">
+            <p class="flex text-justify drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)">{x.includes}</p>
+          </div>
         </div>
+
       ))
     }
   </div>

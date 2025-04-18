@@ -4,10 +4,13 @@ import Sponsorship from '~/components/ui/Sponsorship.astro';
 import Volunteering from '~/components/ui/Volunteering.astro';
 import Layout from '~/layouts/PageLayout.astro';
 import Features from '~/components/widgets/Features.astro';
+ 
 
 const metadata = {
   title: 'Get Involved',
 };
+
+
 ---
 
 <Layout metadata={metadata}>
@@ -26,13 +29,15 @@ const metadata = {
         {
           title:"Join Us",
           description:
-            "Date: 8/21/25 \
+            "<b>Date:</b> 8/21/25 \
             <br>\
-            Location: Beacon Hill Country Club, Middletown, NJ \
+            <b>Location:</b> Beacon Hill Country Club, Middletown, NJ \
             <br>\
-            Registration Fees:\
+            <b>Registration Fees:</b>\
             <br>\
-            <span class='pl-8'></span>$305 per golfer or $1220 per foursome",
+            <span class='pl-8'></span>$320 per golfer\
+            <br>\
+            <span class='pl-8'>$1280 per foursome",
         },
         {
           title: 'The Day',
@@ -45,7 +50,7 @@ const metadata = {
             <br>\
             6:30 PM - DINNER & AWARDS",
 
-        },
+        }
       ]}
       >
       </Features>
@@ -53,7 +58,7 @@ const metadata = {
         More ways to participate! Not a golfer? Come join us for lunch and/or dinner to enjoy the day with friends and family for a good cause! Plus serene views of the New York City Skyline and Sandy Hook Bay!
       </p>
 
-      <p class="text-base text-center leading-tighter tracking-tighter mb-4 font-heading dark:text-gray-200 intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
+      <p class="text-xl text-center leading-tighter tracking-tighter mb-4 font-heading dark:text-gray-200 intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
         Lunch: $50 per person
         <br>
         Dinner $125 per person
